@@ -2,7 +2,7 @@ const DISHES = [
   {
     id: 0,
     name: "Ruhul Amin Sujon",
-    image: "assets/images/0burget.jpg",
+    image: "assets/images/0burger.jpg",
     category: "meal",
     label: "Hot",
     price: "199",
@@ -143,7 +143,7 @@ const DISHES = [
   {
     id: 3,
     name: "Md Roton Mia",
-    image: "assets/images/0burget.jpg",
+    image: "assets/images/0burger.jpg",
     category: "meal",
     label: "Hot",
     price: "199",
