@@ -1,7 +1,7 @@
 const DISHES = [
   {
     id: 0,
-    name: "Ruhul Amin Sujon",
+    name: "Burger",
     image: "assets/images/0burger.jpg",
     category: "meal",
     label: "Hot",
@@ -48,7 +48,7 @@ const DISHES = [
   },
   {
     id: 1,
-    name: "Tanjina Shohid Arin",
+    name: "Pizza",
     image: "assets/images/1pizza.jpg",
     category: "meal",
     label: "Hot",
@@ -95,7 +95,7 @@ const DISHES = [
   },
   {
     id: 2,
-    name: "Asaraful Islam Naim",
+    name: "Frence Fries",
     image: "assets/images/2fries.jpg",
     category: "meal",
     label: "Hot",
@@ -142,7 +142,7 @@ const DISHES = [
   },
   {
     id: 3,
-    name: "Md Roton Mia",
+    name: "Burger",
     image: "assets/images/0burger.jpg",
     category: "meal",
     label: "Hot",
