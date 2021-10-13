@@ -6,10 +6,7 @@ import Menu from "./Menu";
 const Body = () => {
   return (
     <div>
-      <Menu></Menu>
-      <Home></Home>
-      <Contact></Contact>
-      <Body></Body>
+
     </div>
   );
 };
