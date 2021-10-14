@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DISHES from "../../data/dishes.js";
+import COMMANTS from "../../data/comments.js";
 import MenuItem from "./MenuItem";
 import DishDetail from "./DishDetail.js";
 import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
@@ -7,6 +8,7 @@ import { CardColumns, Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
 class Menu extends Component {
   state = {
     dishes: DISHES,
+    comments: COMMANTS,
     selectedDish: null,
     modalOpen: false,
   };
@@ -37,7 +39,11 @@ class Menu extends Component {
 
     let dishDetail = null;
     if (this.state.selectedDish != null) {
-      dishDetail = <DishDetail dish={this.state.selectedDish} />;
+      const comments = this.state.comments.filter(comment => comment.dishId === this.state.selectedDish.id)
+      dishDetail = <DishDetail
+        dish={this.state.selectedDish}
+        comments={comments}
+      />;
     }
 
     return (
