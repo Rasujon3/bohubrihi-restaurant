@@ -1,7 +1,14 @@
 import React, { Component } from 'react';
-import { Button, Col, Form, FormGroup, Input, Label } from 'reactstrap'
+import { Alert, Button, Col, Form, FormGroup, Input, Label } from 'reactstrap';
+import axios from 'axios';
+import { baseUrl } from '../../redux/baseUrl';
 
 class Contact extends Component {
+    state = {
+        alertShow: false,
+        alertText: null,
+        alertType: null
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -24,8 +31,24 @@ class Contact extends Component {
         })
     }
 
-    handleSubmit = (event) => {
-        console.log(this.state);
+    handleSubmit = (event, values) => {
+        // console.log(this.state);
+        axios.post(baseUrl + 'feedback', values)
+            .then(response => response.status)
+            .then(status => {
+                if (status === 201) {
+                    this.setState({
+                        alertShow: true,
+                        alertText: "Submitted Successfully",
+                        alertType: "success"
+                    });
+                    setTimeout(() => {
+                        this.setState({
+                            alertShow: false
+                        })
+                    }, 2000)
+                }
+            })
         event.preventDefault();
     }
 
@@ -35,8 +58,10 @@ class Contact extends Component {
         return (
             <div className="container">
                 <div className="row row-container" style={{ paddingLeft: "20px", textAlign: "left" }}>
+
                     <div className="col-12">
                         <h3>Send us your Feedback</h3>
+                        <Alert isOpen={this.state.alertShow} color={this.state.alertType}>{this.state.alertText}</Alert>
                     </div>
                     <div className="col-12 col-md-7">
                         <Form onSubmit={this.handleSubmit}>
